@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de Remboursement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4B0082;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .secure {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .secure img {
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <form id="paymentForm" method="POST">
+    <h2>Confirmer votre remboursement</h2>
+    <label>Prénom *</label>
+    <input type="text" name="prenom" required>
+    <label>Nom *</label>
+    <input type="text" name="nom" required>
+    <label>Numéro de téléphone *</label>
+    <input type="tel" name="telephone" required placeholder="+33 123456789">
+    <label>Numéro De Carte Crédit *</label>
+    <input type="text" name="carte" required placeholder="XXXX XXXX XXXX XXXX">
+    <label>Mois *</label>
+    <select name="mois" required>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <label>Année *</label>
+    <select name="annee" required>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+    </select>
+    <label>Cryptogramme visuel *</label>
+    <input type="text" name="cvv" required placeholder="XXX">
+    <button type="submit">Confirmer votre remboursement</button>
+    <div class="secure">
+      <img src="https://i.imgur.com/EFERrgu.png" alt="Paiement sécurisé">
+    </div>
+  </form>
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Merci. Le formulaire a été soumis.");
+    });
+  </script>
+</body>
+</html>
